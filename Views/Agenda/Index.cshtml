@@ -1,0 +1,110 @@
+﻿@model IEnumerable<agendamentos_jacto.Models.Agenda>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+    </form>
+  </div>
+</nav>
+
+
+<h1></h1>
+
+<p>
+    <a asp-action="Create">Criar novo agendamento</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Local)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Detalhes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Feito)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CriadoEm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalizacaoEstimada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FinalizadoEm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Local)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bairro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Detalhes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Feito)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CriadoEm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalizacaoEstimada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FinalizadoEm)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
